@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ひろき FP オフィス | ライフプランニング・資産運用・保険の見直し</title>
+  <title>縺ｲ繧阪″ FP 繧ｪ繝輔ぅ繧ｹ | 繝ｩ繧､繝輔・繝ｩ繝ｳ繝九Φ繧ｰ繝ｻ雉・肇驕狗畑繝ｻ菫晞匱縺ｮ隕狗峩縺・/title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    /* ===== カラー変数 ===== */
+    /* ===== 繧ｫ繝ｩ繝ｼ螟画焚 ===== */
     :root {
       --bg:           #F0F4FF;
       --bg2:          #E8EFFE;
@@ -24,7 +24,7 @@
       --radius-pill:  999px;
     }
 
-    /* ===== リセット & ベース ===== */
+    /* ===== 繝ｪ繧ｻ繝・ヨ & 繝吶・繧ｹ ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -36,7 +36,7 @@
     }
     a { text-decoration: none; color: inherit; }
 
-    /* ===== 背景Orb（光源） ===== */
+    /* ===== 閭梧勹Orb・亥・貅撰ｼ・===== */
     .orb-wrap {
       position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
     }
@@ -57,17 +57,17 @@
       background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
     }
 
-    /* ===== ノイズオーバーレイ ===== */
+    /* ===== 繝弱う繧ｺ繧ｪ繝ｼ繝舌・繝ｬ繧､ ===== */
     .noise {
       position: fixed; inset: 0; z-index: 1; pointer-events: none;
       opacity: 0.02;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    /* ===== ページラッパー ===== */
+    /* ===== 繝壹・繧ｸ繝ｩ繝・ヱ繝ｼ ===== */
     .page { position: relative; z-index: 2; }
 
-    /* ===== ガラスカード共通 ===== */
+    /* ===== 繧ｬ繝ｩ繧ｹ繧ｫ繝ｼ繝牙・騾・===== */
     .glass {
       background: rgba(255,255,255,0.55);
       backdrop-filter: blur(20px) saturate(160%);
@@ -79,7 +79,7 @@
         0 8px 32px rgba(100,100,180,0.12);
     }
 
-    /* ===== ナビ ===== */
+    /* ===== 繝翫ン ===== */
     header {
       position: sticky; top: 0; z-index: 100;
       background: rgba(240,244,255,0.75);
@@ -103,7 +103,7 @@
     }
     .nav-cta:hover { background: var(--green-d); transform: translateY(-1px); }
 
-    /* ===== セクション共通 ===== */
+    /* ===== 繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ蜈ｱ騾・===== */
     section { padding: 96px 24px; position: relative; }
     .section-inner { max-width: 860px; margin: 0 auto; }
     .section-label {
@@ -121,7 +121,7 @@
       font-size: 0.95rem; margin-bottom: 56px;
     }
 
-    /* ===== ヒーロー ===== */
+    /* ===== 繝偵・繝ｭ繝ｼ ===== */
     #hero {
       min-height: 100svh;
       display: flex; flex-direction: column;
@@ -162,7 +162,7 @@
     .hero-note { font-size: 0.75rem; color: var(--sub); margin-top: 14px; }
 
 
-    /* ===== お悩みセクション ===== */
+    /* ===== 縺頑か縺ｿ繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ ===== */
     #worries { background: transparent; }
     .worry-grid {
       display: grid;
@@ -181,7 +181,7 @@
     }
     .worry-card .icon { font-size: 1.3rem; flex-shrink: 0; opacity: 0.9; }
 
-    /* ===== サービスセクション ===== */
+    /* ===== 繧ｵ繝ｼ繝薙せ繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ ===== */
     #services { background: transparent; }
     .service-grid {
       display: grid;
@@ -202,7 +202,7 @@
     }
     .service-card p { font-size: 0.84rem; color: var(--sub); }
 
-    /* ===== 自己紹介 ===== */
+    /* ===== 閾ｪ蟾ｱ邏ｹ莉・===== */
     #about { background: transparent; }
     .about-wrap {
       display: flex; gap: 48px;
@@ -231,7 +231,7 @@
       padding: 4px 14px; border-radius: var(--radius-pill);
     }
 
-    /* ===== 相談の流れ ===== */
+    /* ===== 逶ｸ隲・・豬√ｌ ===== */
     #flow { background: transparent; }
     .flow-steps {
       display: flex; flex-direction: column;
@@ -283,7 +283,7 @@
     .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(6,199,85,0.55); }
     .cta-note { margin-top: 16px; font-size: 0.78rem; color: var(--sub); }
 
-    /* ===== フッター ===== */
+    /* ===== 繝輔ャ繧ｿ繝ｼ ===== */
     footer {
       position: relative; z-index: 2;
       border-top: 1px solid rgba(30,41,59,0.1);
@@ -291,7 +291,7 @@
       font-size: 0.78rem; color: rgba(30,41,59,0.4);
     }
 
-    /* ===== レスポンシブ ===== */
+    /* ===== 繝ｬ繧ｹ繝昴Φ繧ｷ繝・===== */
     @media (max-width: 600px) {
       section { padding: 72px 18px; }
       .about-wrap { gap: 28px; }
@@ -301,118 +301,116 @@
 </head>
 <body>
 
-  <!-- 背景Orb -->
+  <!-- 閭梧勹Orb -->
   <div class="orb-wrap">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
   </div>
-  <!-- ノイズ -->
+  <!-- 繝弱う繧ｺ -->
   <div class="noise"></div>
 
-  <!-- コンテンツ -->
+  <!-- 繧ｳ繝ｳ繝・Φ繝・-->
   <div class="page">
 
-    <!-- ナビ -->
+    <!-- 繝翫ン -->
     <header>
-      <div class="logo">ひろき FP オフィス</div>
-      <a href="#cta" class="nav-cta">💬 LINEで相談する</a>
+      <div class="logo">縺ｲ繧阪″ FP 繧ｪ繝輔ぅ繧ｹ</div>
+      <a href="#cta" class="nav-cta">町 LINE縺ｧ逶ｸ隲・☆繧・/a>
     </header>
 
-    <!-- ヒーロー -->
+    <!-- 繝偵・繝ｭ繝ｼ -->
     <section id="hero">
       <div class="hero-tag">FINANCIAL PLANNER</div>
-      <h1>給料は入るのに、なぜか手元にお金が残らない。<br><em>将来のこと、ちゃんと考えなきゃと思いながら、もう何年も経っていた。</em></h1>
+      <h1>邨ｦ譁吶・蜈･繧九・縺ｫ縲√↑縺懊°謇句・縺ｫ縺企≡縺梧ｮ九ｉ縺ｪ縺・・br><em>蟆・擂縺ｮ縺薙→縲√■繧・ｓ縺ｨ閠・∴縺ｪ縺阪ｃ縺ｨ諤昴＞縺ｪ縺後ｉ縲√ｂ縺・ｽ募ｹｴ繧らｵ後▲縺ｦ縺・◆縲・/em></h1>
       <p class="hero-sub">
-        「そのうち勉強しよう」と先送りにした5年で、<br>
-        選択肢は確実に減っている。<br>
-        保険・資産運用・老後・住宅——どれも複雑に見えるけれど、<br>
-        一緒に解きほぐせば必ず道は見える。まずあなたの話を聞かせてください。
-      </p>
+        縲後◎縺ｮ縺・■蜍牙ｼｷ縺励ｈ縺・阪→蜈磯√ｊ縺ｫ縺励◆5蟷ｴ縺ｧ縲・br>
+        驕ｸ謚櫁い縺ｯ遒ｺ螳溘↓貂帙▲縺ｦ縺・ｋ縲・br>
+        菫晞匱繝ｻ雉・肇驕狗畑繝ｻ閠∝ｾ後・菴丞ｮ・披斐←繧後ｂ隍・尅縺ｫ隕九∴繧九￠繧後←縲・br>
+        荳邱偵↓隗｣縺阪⊇縺舌○縺ｰ蠢・★驕薙・隕九∴繧九ゅ∪縺壹≠縺ｪ縺溘・隧ｱ繧定◇縺九○縺ｦ縺上□縺輔＞縲・      </p>
       <a href="#cta" class="hero-btn">
-        <span>💬</span>LINEで無料相談する
-      </a>
-      <p class="hero-note">📌 完全無料・勧誘なし・秘密厳守</p>
+        <span>町</span>LINE縺ｧ辟｡譁咏嶌隲・☆繧・      </a>
+      <p class="hero-note">東 螳悟・辟｡譁吶・蜍ｧ隱倥↑縺励・遘伜ｯ・宍螳・/p>
     </section>
 
-    <!-- お悩みあるある -->
+    <!-- 縺頑か縺ｿ縺ゅｋ縺ゅｋ -->
     <section id="worries">
       <div class="section-inner">
         <p class="section-label">WORRIES</p>
-        <h2 class="section-title">こんなこと、思ったことありませんか？</h2>
-        <p class="section-lead">多くの方が感じているお金へのリアルな疑問です</p>
+        <h2 class="section-title">縺薙ｓ縺ｪ縺薙→縲∵昴▲縺溘％縺ｨ縺ゅｊ縺ｾ縺帙ｓ縺具ｼ・/h2>
+        <p class="section-lead">螟壹￥縺ｮ譁ｹ縺梧─縺倥※縺・ｋ縺企≡縺ｸ縺ｮ繝ｪ繧｢繝ｫ縺ｪ逍大撫縺ｧ縺・/p>
         <div class="worry-grid">
-          <div class="worry-card glass"><span class="icon">💭</span>毎月ちゃんと稼いでるのに、気づいたら残高がギリギリな気がする</div>
-          <div class="worry-card glass"><span class="icon">💭</span>老後のためにお金を貯めなきゃとは思うけど、何をすればいいのかさっぱりわからない</div>
-          <div class="worry-card glass"><span class="icon">💭</span>NISAって名前は聞いたことあるけど、自分には関係ない話なんじゃないか</div>
-          <div class="worry-card glass"><span class="icon">💭</span>保険料、なんとなく高い気はするけど削っていいかどうか判断できない</div>
-          <div class="worry-card glass"><span class="icon">💭</span>住宅ローンを組んだとして、本当に返し続けられるのかが漠然と怖い</div>
-          <div class="worry-card glass"><span class="icon">💭</span>とりあえず勧められるまま入った保険、実は必要ないものを払い続けてるんじゃないか</div>
+          <div class="worry-card glass"><span class="icon">眺</span>豈取怦縺｡繧・ｓ縺ｨ遞ｼ縺・〒繧九・縺ｫ縲∵ｰ励▼縺・◆繧画ｮ矩ｫ倥′繧ｮ繝ｪ繧ｮ繝ｪ縺ｪ豌励′縺吶ｋ</div>
+          <div class="worry-card glass"><span class="icon">眺</span>閠∝ｾ後・縺溘ａ縺ｫ縺企≡繧定ｲｯ繧√↑縺阪ｃ縺ｨ縺ｯ諤昴≧縺代←縲∽ｽ輔ｒ縺吶ｌ縺ｰ縺・＞縺ｮ縺九＆縺｣縺ｱ繧翫ｏ縺九ｉ縺ｪ縺・/div>
+          <div class="worry-card glass"><span class="icon">眺</span>NISA縺｣縺ｦ蜷榊燕縺ｯ閨槭＞縺溘％縺ｨ縺ゅｋ縺代←縲∬・蛻・↓縺ｯ髢｢菫ゅ↑縺・ｩｱ縺ｪ繧薙§繧・↑縺・°</div>
+          <div class="worry-card glass"><span class="icon">眺</span>菫晞匱譁吶√↑繧薙→縺ｪ縺城ｫ倥＞豌励・縺吶ｋ縺代←蜑翫▲縺ｦ縺・＞縺九←縺・°蛻､譁ｭ縺ｧ縺阪↑縺・/div>
+          <div class="worry-card glass"><span class="icon">眺</span>菴丞ｮ・Ο繝ｼ繝ｳ繧堤ｵ・ｓ縺縺ｨ縺励※縲∵悽蠖薙↓霑斐＠邯壹￠繧峨ｌ繧九・縺九′貍辟ｶ縺ｨ諤悶＞</div>
+          <div class="worry-card glass"><span class="icon">眺</span>縺ｨ繧翫≠縺医★蜍ｧ繧√ｉ繧後ｋ縺ｾ縺ｾ蜈･縺｣縺滉ｿ晞匱縲∝ｮ溘・蠢・ｦ√↑縺・ｂ縺ｮ繧呈鴛縺・ｶ壹￠縺ｦ繧九ｓ縺倥ｃ縺ｪ縺・°</div>
         </div>
       </div>
     </section>
 
-    <!-- できること -->
+    <!-- 縺ｧ縺阪ｋ縺薙→ -->
     <section id="services">
       <div class="section-inner">
         <p class="section-label">SERVICES</p>
-        <h2 class="section-title">ひろきにできること</h2>
-        <p class="section-lead">「家計の整理」から「将来の設計」まで、まるごとサポートします</p>
+        <h2 class="section-title">縺ｲ繧阪″縺ｫ縺ｧ縺阪ｋ縺薙→</h2>
+        <p class="section-lead">縲悟ｮｶ險医・謨ｴ逅・阪°繧峨悟ｰ・擂縺ｮ險ｭ險医阪∪縺ｧ縲√∪繧九＃縺ｨ繧ｵ繝昴・繝医＠縺ｾ縺・/p>
         <div class="service-grid">
           <div class="service-card glass">
-            <div class="s-icon">🗺️</div>
-            <h3>ライフプランニング</h3>
-            <p>「いつ、いくら必要か」が見えると、不安は計画に変わる。30代夫婦の場合、老後に必要な額と今の貯蓄ペースのギャップを1時間で数字にします。結婚・出産・住宅・老後——人生の節目ごとのお金を可視化して、漠然とした不安に根拠と対処法を。</p>
+            <div class="s-icon">亮・・/div>
+            <h3>繝ｩ繧､繝輔・繝ｩ繝ｳ繝九Φ繧ｰ</h3>
+            <p>縲後＞縺､縲√＞縺上ｉ蠢・ｦ√°縲阪′隕九∴繧九→縲∽ｸ榊ｮ峨・險育判縺ｫ螟峨ｏ繧九・0莉｣螟ｫ蟀ｦ縺ｮ蝣ｴ蜷医∬∝ｾ後↓蠢・ｦ√↑鬘阪→莉翫・雋ｯ闢・・繝ｼ繧ｹ縺ｮ繧ｮ繝｣繝・・繧・譎る俣縺ｧ謨ｰ蟄励↓縺励∪縺吶らｵ仙ｩ壹・蜃ｺ逕｣繝ｻ菴丞ｮ・・閠∝ｾ娯披比ｺｺ逕溘・遽逶ｮ縺斐→縺ｮ縺企≡繧貞庄隕門喧縺励※縲∵ｼ辟ｶ縺ｨ縺励◆荳榊ｮ峨↓譬ｹ諡縺ｨ蟇ｾ蜃ｦ豕輔ｒ縲・/p>
           </div>
           <div class="service-card glass">
-            <div class="s-icon">📈</div>
-            <h3>資産運用</h3>
-            <p>NISA・iDeCoをフル活用した運用設計を一緒に作ります。知らないまま動くと、相場が下がったとき判断できず全部売ってしまう。仕組みを理解した上で始めた人は、同じ局面でも動じにくくなります。</p>
+            <div class="s-icon">嶋</div>
+            <h3>雉・肇驕狗畑</h3>
+            <p>NISA繝ｻiDeCo繧偵ヵ繝ｫ豢ｻ逕ｨ縺励◆驕狗畑險ｭ險医ｒ荳邱偵↓菴懊ｊ縺ｾ縺吶ら衍繧峨↑縺・∪縺ｾ蜍輔￥縺ｨ縲∫嶌蝣ｴ縺御ｸ九′縺｣縺溘→縺榊愛譁ｭ縺ｧ縺阪★蜈ｨ驛ｨ螢ｲ縺｣縺ｦ縺励∪縺・ゆｻ慕ｵ・∩繧堤炊隗｣縺励◆荳翫〒蟋九ａ縺滉ｺｺ縺ｯ縲∝酔縺伜ｱ髱｢縺ｧ繧ょ虚縺倥↓縺上￥縺ｪ繧翫∪縺吶・/p>
           </div>
           <div class="service-card glass">
-            <div class="s-icon">🏦</div>
-            <h3>資産形成</h3>
-            <p>収入が増えなくても、「貯まる構造」さえ作れば確実に変わる。月3万円の使い方を見直すだけで、10年後の手元資金が100万円以上変わるケースがあります。無理なく自動的に資産が育つ仕組みをゼロから設計します。</p>
+            <div class="s-icon">嘗</div>
+            <h3>雉・肇蠖｢謌・/h3>
+            <p>蜿主・縺悟｢励∴縺ｪ縺上※繧ゅ√瑚ｲｯ縺ｾ繧区ｧ矩縲阪＆縺井ｽ懊ｌ縺ｰ遒ｺ螳溘↓螟峨ｏ繧九よ怦3荳・・縺ｮ菴ｿ縺・婿繧定ｦ狗峩縺吶□縺代〒縲・0蟷ｴ蠕後・謇句・雉・≡縺・00荳・・莉･荳雁､峨ｏ繧九こ繝ｼ繧ｹ縺後≠繧翫∪縺吶ら┌逅・↑縺剰・蜍慕噪縺ｫ雉・肇縺瑚ご縺､莉慕ｵ・∩繧偵ぞ繝ｭ縺九ｉ險ｭ險医＠縺ｾ縺吶・/p>
           </div>
           <div class="service-card glass">
-            <div class="s-icon">🛡️</div>
-            <h3>保険の見直し</h3>
-            <p>今の家族構成と収入に本当に必要な保障だけを残し、不要な支払いをゼロにします。払い続けてきた保険料の中に、削れるものが必ずあります。</p>
+            <div class="s-icon">孱・・/div>
+            <h3>菫晞匱縺ｮ隕狗峩縺・/h3>
+            <p>莉翫・螳ｶ譌乗ｧ区・縺ｨ蜿主・縺ｫ譛ｬ蠖薙↓蠢・ｦ√↑菫晞囿縺縺代ｒ谿九＠縲∽ｸ崎ｦ√↑謾ｯ謇輔＞繧偵ぞ繝ｭ縺ｫ縺励∪縺吶よ鴛縺・ｶ壹￠縺ｦ縺阪◆菫晞匱譁吶・荳ｭ縺ｫ縲∝炎繧後ｋ繧ゅ・縺悟ｿ・★縺ゅｊ縺ｾ縺吶・/p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 自己紹介 -->
+    <!-- 閾ｪ蟾ｱ邏ｹ莉・-->
     <section id="about">
       <div class="section-inner">
         <p class="section-label">ABOUT</p>
-        <h2 class="section-title">こんな人が担当します</h2>
+        <h2 class="section-title">縺薙ｓ縺ｪ莠ｺ縺梧球蠖薙＠縺ｾ縺・/h2>
         <div class="about-wrap">
-          <div class="avatar glass">🌿</div>
+          <div class="avatar glass">諺</div>
           <div class="about-text">
-            <h2>ひろき（FP）</h2>
-            <p class="subtitle">ファイナンシャルプランナー</p>
-            <p>正直に言うと、私自身もずっとお金が苦手でした。給料はあるのに貯金がない、保険は入ったものの内容がよくわからない、老後のことを考えると不安だけが膨らむ——そういう時期が長くありました。</p>
-            <p>FPの資格を取ったのは「人に教えたい」からではなく、まず自分のお金を整理したかったからです。だから「難しい言葉で煙に巻く」「商品ありきで話を進める」は絶対にしないと決めています。あなたのお金の状況を聞いて、本当に必要なことを一緒に考える——それだけを仕事にしています。</p>
-            <p>「こんな話、相談していいのかな」と思ったその内容——実はそれが一番大事なことです。だからあなたの話を聞かせてください。</p>
+            <h2>縺ｲ繧阪″・・P・・/h2>
+            <p class="subtitle">繝輔ぃ繧､繝翫Φ繧ｷ繝｣繝ｫ繝励Λ繝ｳ繝翫・</p>
+            <p>豁｣逶ｴ縺ｫ險縺・→縲∫ｧ∬・霄ｫ繧ゅ★縺｣縺ｨ縺企≡縺瑚協謇九〒縺励◆縲らｵｦ譁吶・縺ゅｋ縺ｮ縺ｫ雋ｯ驥代′縺ｪ縺・∽ｿ晞匱縺ｯ蜈･縺｣縺溘ｂ縺ｮ縺ｮ蜀・ｮｹ縺後ｈ縺上ｏ縺九ｉ縺ｪ縺・∬∝ｾ後・縺薙→繧定・∴繧九→荳榊ｮ峨□縺代′閹ｨ繧峨・窶披斐◎縺・＞縺・凾譛溘′髟ｷ縺上≠繧翫∪縺励◆縲・/p>
+            <p>FP縺ｮ雉・ｼ繧貞叙縺｣縺溘・縺ｯ縲御ｺｺ縺ｫ謨吶∴縺溘＞縲阪°繧峨〒縺ｯ縺ｪ縺上√∪縺夊・蛻・・縺企≡繧呈紛逅・＠縺溘°縺｣縺溘°繧峨〒縺吶ゅ□縺九ｉ縲碁屮縺励＞險闡峨〒辣吶↓蟾ｻ縺上阪悟膚蜩√≠繧翫″縺ｧ隧ｱ繧帝ｲ繧√ｋ縲阪・邨ｶ蟇ｾ縺ｫ縺励↑縺・→豎ｺ繧√※縺・∪縺吶ゅ≠縺ｪ縺溘・縺企≡縺ｮ迥ｶ豕√ｒ閨槭＞縺ｦ縲∵悽蠖薙↓蠢・ｦ√↑縺薙→繧剃ｸ邱偵↓閠・∴繧銀披斐◎繧後□縺代ｒ莉穂ｺ九↓縺励※縺・∪縺吶・/p>
+            <p>縲後％繧薙↑隧ｱ縲∫嶌隲・＠縺ｦ縺・＞縺ｮ縺九↑縲阪→諤昴▲縺溘◎縺ｮ蜀・ｮｹ窶披泌ｮ溘・縺昴ｌ縺御ｸ逡ｪ螟ｧ莠九↑縺薙→縺ｧ縺吶ゅ□縺九ｉ縺ゅ↑縺溘・隧ｱ繧定◇縺九○縺ｦ縺上□縺輔＞縲・/p>
             <div class="badge-list">
-              <span class="badge">📜 FP資格保有</span>
-              <span class="badge">🤝 押しつけなし</span>
-              <span class="badge">🔒 秘密厳守</span>
-              <span class="badge">💬 相談無料</span>
+              <span class="badge">糖 FP雉・ｼ菫晄怏</span>
+              <span class="badge">､・謚ｼ縺励▽縺代↑縺・/span>
+              <span class="badge">白 遘伜ｯ・宍螳・/span>
+              <span class="badge">町 逶ｸ隲・┌譁・/span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 相談の流れ -->
+    <!-- 逶ｸ隲・・豬√ｌ -->
     <section id="flow">
       <div class="section-inner">
         <p class="section-label">FLOW</p>
-        <h2 class="section-title">相談の流れ</h2>
-        <p class="section-lead">LINEで気軽に声をかけてください。最初は雑談でもOKです</p>
+        <h2 class="section-title">逶ｸ隲・・豬√ｌ</h2>
+        <p class="section-lead">LINE縺ｧ豌苓ｻｽ縺ｫ螢ｰ繧偵°縺代※縺上□縺輔＞縲よ怙蛻昴・髮題ｫ・〒繧０K縺ｧ縺・/p>
         <div class="flow-steps">
           <div class="flow-step">
             <div class="step-left">
@@ -420,8 +418,8 @@
               <div class="step-line"></div>
             </div>
             <div class="step-body">
-              <h3>💬 LINEで一言送る</h3>
-              <p>「相談したいことがある」「保険を見直したい」など、どんな内容でもOK。返信は24時間以内にします。</p>
+              <h3>町 LINE縺ｧ荳險騾√ｋ</h3>
+              <p>縲檎嶌隲・＠縺溘＞縺薙→縺後≠繧九阪御ｿ晞匱繧定ｦ狗峩縺励◆縺・阪↑縺ｩ縲√←繧薙↑蜀・ｮｹ縺ｧ繧０K縲りｿ比ｿ｡縺ｯ24譎る俣莉･蜀・↓縺励∪縺吶・/p>
             </div>
           </div>
           <div class="flow-step">
@@ -430,8 +428,8 @@
               <div class="step-line"></div>
             </div>
             <div class="step-body">
-              <h3>📅 日程を決めてオンライン面談</h3>
-              <p>ZoomまたはLINE通話で30〜60分。仕事終わりや休日でも大丈夫です。もちろん無料。</p>
+              <h3>套 譌･遞九ｒ豎ｺ繧√※繧ｪ繝ｳ繝ｩ繧､繝ｳ髱｢隲・/h3>
+              <p>Zoom縺ｾ縺溘・LINE騾夊ｩｱ縺ｧ30縲・0蛻・ゆｻ穂ｺ狗ｵゅｏ繧翫ｄ莨第律縺ｧ繧ょ､ｧ荳亥､ｫ縺ｧ縺吶ゅｂ縺｡繧阪ｓ辟｡譁吶・/p>
             </div>
           </div>
           <div class="flow-step">
@@ -440,8 +438,8 @@
               <div class="step-line"></div>
             </div>
             <div class="step-body">
-              <h3>📝 あなた専用のプランを提案</h3>
-              <p>ヒアリング内容をもとに、具体的な数字と行動プランをお伝えします。気に入らなければ断ってOK。</p>
+              <h3>統 縺ゅ↑縺溷ｰら畑縺ｮ繝励Λ繝ｳ繧呈署譯・/h3>
+              <p>繝偵い繝ｪ繝ｳ繧ｰ蜀・ｮｹ繧偵ｂ縺ｨ縺ｫ縲∝・菴鍋噪縺ｪ謨ｰ蟄励→陦悟虚繝励Λ繝ｳ繧偵♀莨昴∴縺励∪縺吶よｰ励↓蜈･繧峨↑縺代ｌ縺ｰ譁ｭ縺｣縺ｦOK縲・/p>
             </div>
           </div>
         </div>
@@ -452,21 +450,19 @@
     <section id="cta">
       <div class="section-inner">
         <div class="glass-cta glass">
-          <h2>10分だけ、話してみませんか。</h2>
+          <h2>10蛻・□縺代∬ｩｱ縺励※縺ｿ縺ｾ縺帙ｓ縺九・/h2>
           <p>
-            「相談するほどじゃないかも」そう思う人ほど、話してみると「もっと早く来ればよかった」と言います。費用はかかりません。商品を勧めることもしません。お金の知識がゼロでも大丈夫です。わからないままで話してもらうところから始めます。あなたのペースで、気が向いたときに声をかけてください。
-          </p>
+            縲檎嶌隲・☆繧九⊇縺ｩ縺倥ｃ縺ｪ縺・°繧ゅ阪◎縺・昴≧莠ｺ縺ｻ縺ｩ縲∬ｩｱ縺励※縺ｿ繧九→縲後ｂ縺｣縺ｨ譌ｩ縺乗擂繧後・繧医°縺｣縺溘阪→險縺・∪縺吶りｲｻ逕ｨ縺ｯ縺九°繧翫∪縺帙ｓ縲ょ膚蜩√ｒ蜍ｧ繧√ｋ縺薙→繧ゅ＠縺ｾ縺帙ｓ縲ゅ♀驥代・遏･隴倥′繧ｼ繝ｭ縺ｧ繧ょ､ｧ荳亥､ｫ縺ｧ縺吶ゅｏ縺九ｉ縺ｪ縺・∪縺ｾ縺ｧ隧ｱ縺励※繧ゅｉ縺・→縺薙ｍ縺九ｉ蟋九ａ縺ｾ縺吶ゅ≠縺ｪ縺溘・繝壹・繧ｹ縺ｧ縲∵ｰ励′蜷代＞縺溘→縺阪↓螢ｰ繧偵°縺代※縺上□縺輔＞縲・          </p>
           <a href="https://line.me/ti/p/zGqif4AxqN" class="cta-btn">
-            <span style="font-size:1.4rem">💬</span>LINEでちょっと話してみる
-          </a>
-          <p class="cta-note">完全無料 ・ 勧誘なし ・ いつでも退会OK</p>
+            <span style="font-size:1.4rem">町</span>LINE縺ｧ縺｡繧・▲縺ｨ隧ｱ縺励※縺ｿ繧・          </a>
+          <p class="cta-note">螳悟・辟｡譁・繝ｻ 蜍ｧ隱倥↑縺・繝ｻ 縺・▽縺ｧ繧る莨唹K</p>
         </div>
       </div>
     </section>
 
-    <!-- フッター -->
+    <!-- 繝輔ャ繧ｿ繝ｼ -->
     <footer>
-      <p>© 2025 ひろき FP オフィス ｜ ライフプランニング・資産運用・保険のご相談はLINEへ</p>
+      <p>ﾂｩ 2025 縺ｲ繧阪″ FP 繧ｪ繝輔ぅ繧ｹ ・・繝ｩ繧､繝輔・繝ｩ繝ｳ繝九Φ繧ｰ繝ｻ雉・肇驕狗畑繝ｻ菫晞匱縺ｮ縺皮嶌隲・・LINE縺ｸ</p>
     </footer>
 
   </div><!-- /.page -->
